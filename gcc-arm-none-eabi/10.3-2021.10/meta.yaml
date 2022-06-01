@@ -1,0 +1,25 @@
+{% set version = "10.3-2021.10" %}
+
+package:
+  name: gcc-arm-none-eabi
+  version: {{ version | replace('-', '_') }}
+
+source:
+  url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/{{ version }}/gcc-arm-none-eabi-{{ version }}-x86_64-linux.tar.bz2 # [linux64]
+  md5: 2383e4eb4ea23f248d33adc70dc3227e # [linux64]
+  url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/{{ version }}/gcc-arm-none-eabi-{{ version }}-aarch64-linux.tar.bz2 # [aarch64]
+  md5: 3fe3d8bb693bd0a6e4615b6569443d0d # [aarch64]
+  url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/{{ version }}/gcc-arm-none-eabi-{{ version }}-mac.tar.bz2 # [osx]
+  md5: 7f2a7b7b23797302a9d6182c6e482449 # [osx]
+
+build:
+  string: '0'
+
+test:
+  commands:
+    - arm-none-eabi-gcc --version
+
+about:
+  home: https://developer.arm.com/open-source-software/developer-tools/gnu-toolchain
+  license: GPL
+  summary: GNU Arm Embedded Toolchain

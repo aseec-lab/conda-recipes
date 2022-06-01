@@ -1,0 +1,5 @@
+**/build/
+**/__pycache__/
+**/*.tar.bz2
+**/*.tar.xz
+**/*.zip

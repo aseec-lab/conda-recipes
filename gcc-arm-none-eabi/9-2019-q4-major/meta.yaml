@@ -1,0 +1,25 @@
+
+
+package:
+  name: gcc-arm-none-eabi
+  version: '9_2019_q4_major'
+
+source:
+  url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2 # [linux64]
+  md5: fe0029de4f4ec43cf7008944e34ff8cc # [linux64]
+  url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-aarch64-linux.tar.bz2 # [aarch64]
+  md5: 0dfa059aae18fcf7d842e30c525076a4 # [aarch64]
+  url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2 # [osx]
+  md5: 241b64f0578db2cf146034fc5bcee3d4 # [osx]
+
+build:
+  string: '0'
+
+test:
+  commands:
+    - arm-none-eabi-gcc --version
+
+about:
+  home: https://developer.arm.com/open-source-software/developer-tools/gnu-toolchain
+  license: GPL
+  summary: GNU Arm Embedded Toolchain
